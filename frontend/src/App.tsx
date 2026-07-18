@@ -259,7 +259,6 @@ const AboutPage = ({ setActiveTab }: { setActiveTab: (tab: string) => void }) =>
               <p>Our customer-centric approach, industry expertise, and commitment to quality make The JobSync a trusted technology partner for organizations across multiple industries worldwide.</p>
 
               <div className="about-bottom">
-                <div className="signature">The Jobsync Team</div>
               </div>
             </div>
           </div>
@@ -592,7 +591,6 @@ function App() {
 
                   <div className="about-bottom">
                     <button className="btn-solid" style={{ padding: '10px 25px' }} onClick={(e) => { e.preventDefault(); setActiveTab('about'); window.scrollTo(0, 0); }}>READ MORE</button>
-                    <div className="signature">The Jobsync Team</div>
                   </div>
                 </div>
               </div>
