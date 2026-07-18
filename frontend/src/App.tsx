@@ -486,7 +486,7 @@ function App() {
           <div className="logo">
             <img src="/jobsync-logo.jpg" alt="The Jobsync Logo" width="45" height="45" style={{ marginRight: '10px', objectFit: 'contain' }} />
             <div style={{ display: 'flex', flexDirection: 'column' }}>
-              <span className="logo-text">The Jobsync Website</span>
+              <span className="logo-text">The Jobsync</span>
               <span style={{ fontSize: '9px', color: '#94a3b8', letterSpacing: '1px' }}>IT CONSULTING & SERVICES</span>
             </div>
           </div>
@@ -867,7 +867,7 @@ function App() {
               <div className="logo" style={{ marginBottom: '20px' }}>
                 <img src="/jobsync-logo.jpg" alt="The Jobsync Logo" width="45" height="45" style={{ marginRight: '10px', objectFit: 'contain' }} />
                 <div style={{ display: 'flex', flexDirection: 'column' }}>
-                  <span className="logo-text" style={{ color: 'white' }}>The Jobsync Website</span>
+                  <span className="logo-text" style={{ color: 'white' }}>The Jobsync</span>
                   <span style={{ fontSize: '9px', color: '#94a3b8', letterSpacing: '1px' }}>IT CONSULTING & SERVICES</span>
                 </div>
               </div>
