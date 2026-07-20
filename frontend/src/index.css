@@ -115,6 +115,13 @@ a {
   font-weight: 800;
   color: #1a2238;
 }
+.mobile-menu-btn {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: var(--text-dark);
+}
 .nav-wrapper {
   display: flex;
   align-items: center;
@@ -577,13 +584,42 @@ a {
     display: none;
   }
   .header .container {
-    flex-direction: column;
-    gap: 15px;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+  }
+  .mobile-menu-btn {
+    display: flex;
+  }
+  .nav-wrapper {
+    display: none;
+    width: 100%;
+    animation: slideDown 0.3s ease;
+  }
+  .nav-wrapper.mobile-open {
+    display: block;
+    margin-top: 10px;
+    border-top: 1px solid #e2e8f0;
+    padding-top: 15px;
   }
   .nav {
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 15px;
+    flex-direction: column;
+    align-items: center;
+    gap: 0px;
+  }
+  .nav a {
+    display: block;
+    width: 100%;
+    text-align: center;
+    padding: 12px 0;
+    border-bottom: 1px solid #f1f5f9;
+  }
+  .nav a:last-child {
+    border-bottom: none;
+  }
+  @keyframes slideDown {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
   }
   .hero-content h1 {
     font-size: 32px;

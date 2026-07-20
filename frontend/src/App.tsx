@@ -482,6 +482,7 @@ const ServicesPage = ({ setActiveTab }: { setActiveTab: (tab: string) => void })
 
 function App() {
   const [activeTab, setActiveTab] = useState('home');
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
   const [successMsg, setSuccessMsg] = useState('');
   const [errorMsg, setErrorMsg] = useState('');
@@ -560,14 +561,31 @@ function App() {
             </div>
           </div>
 
-          <div className="nav-wrapper">
+          <button className="mobile-menu-btn" onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}>
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+              {isMobileMenuOpen ? (
+                <>
+                  <line x1="18" y1="6" x2="6" y2="18"></line>
+                  <line x1="6" y1="6" x2="18" y2="18"></line>
+                </>
+              ) : (
+                <>
+                  <line x1="3" y1="12" x2="21" y2="12"></line>
+                  <line x1="3" y1="6" x2="21" y2="6"></line>
+                  <line x1="3" y1="18" x2="21" y2="18"></line>
+                </>
+              )}
+            </svg>
+          </button>
+
+          <div className={`nav-wrapper ${isMobileMenuOpen ? 'mobile-open' : ''}`}>
             <nav className="nav">
-              <a href="#" onClick={() => setActiveTab('home')} style={{ color: activeTab === 'home' ? 'var(--primary-cyan)' : '' }}>HOME</a>
-              <a href="#about" onClick={() => setActiveTab('about')} style={{ color: activeTab === 'about' ? 'var(--primary-cyan)' : '' }}>ABOUT US</a>
-              <a href="#services" onClick={() => setActiveTab('services')} style={{ color: activeTab === 'services' ? 'var(--primary-cyan)' : '' }}>SERVICES</a>
-              <a href="#" onClick={() => setActiveTab('blog')} style={{ color: activeTab === 'blog' ? 'var(--primary-cyan)' : '' }}>BLOG</a>
-              <a href="#" onClick={() => setActiveTab('careers')} style={{ color: activeTab === 'careers' ? 'var(--primary-cyan)' : '' }}>CAREERS</a>
-              <a href="#contact" onClick={() => setActiveTab('contact')} style={{ color: activeTab === 'contact' ? 'var(--primary-cyan)' : '' }}>CONTACT US</a>
+              <a href="#" onClick={() => { setActiveTab('home'); setIsMobileMenuOpen(false); }} style={{ color: activeTab === 'home' ? 'var(--primary-cyan)' : '' }}>HOME</a>
+              <a href="#about" onClick={() => { setActiveTab('about'); setIsMobileMenuOpen(false); }} style={{ color: activeTab === 'about' ? 'var(--primary-cyan)' : '' }}>ABOUT US</a>
+              <a href="#services" onClick={() => { setActiveTab('services'); setIsMobileMenuOpen(false); }} style={{ color: activeTab === 'services' ? 'var(--primary-cyan)' : '' }}>SERVICES</a>
+              <a href="#" onClick={() => { setActiveTab('blog'); setIsMobileMenuOpen(false); }} style={{ color: activeTab === 'blog' ? 'var(--primary-cyan)' : '' }}>BLOG</a>
+              <a href="#" onClick={() => { setActiveTab('careers'); setIsMobileMenuOpen(false); }} style={{ color: activeTab === 'careers' ? 'var(--primary-cyan)' : '' }}>CAREERS</a>
+              <a href="#contact" onClick={() => { setActiveTab('contact'); setIsMobileMenuOpen(false); }} style={{ color: activeTab === 'contact' ? 'var(--primary-cyan)' : '' }}>CONTACT US</a>
             </nav>
           </div>
         </div>
